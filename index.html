@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">    
+        <div id="activenob" class="activenob"><img src="./icons/icons8-add-new-30.png" alt=""></div> 
+        <ul>
+            <li class="acc" value="0"><img src="./icons/icons8-account-24.png" alt=""></li>
+            <li class="fav" value="1"><img src="./icons/icons8-favourites-66.png" alt=""></li>
+            <li value="2"><img src="./icons/icons8-add-new-30.png" alt=""></li>
+            <li value="3"><img src="./icons/icons8-home-page-30.png" alt=""></li>
+            <li value="4"><img src="./icons/icons8-services-30.png" alt=""></li>
+        </ul>
+    </div>
+<script>
+    const links = document.getElementsByTagName("li")
+    const activenob = document.getElementById("activenob")
+
+    for(link of links){
+        link.onclick = function(){
+            for(link of links){
+                link.style.opacity = "1"
+            }
+            console.log("clicked")
+            activenob.style.left = (55 * this.value) + 'px'
+            activenob.innerHTML=this.innerHTML
+            this.style.opacity = "0"
+        }
+    }
+</script>
+</body>
+</html>
